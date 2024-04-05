@@ -1,10 +1,13 @@
 name: Terraform CI CD Pipeline for deploying AWS resources
-run-name: ${{github.actor}} has triggered the pipelineon:
+run-name: ${{github.actor}} has triggered the pipeline
+on:
  push:
  branches:
   -'main'env:
  AWS_ACCESS_KEY: ${{secrets.AWS_ACCESS_KEY}}
- AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRETS_ACCESS_KEY}}jobs:
+ AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRETS_ACCESS_KEY}}
+
+jobs:
 build-infra:
  name: terraform-ci-cd
  runs on: ubuntu-latest
